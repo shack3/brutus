@@ -59,14 +59,14 @@ def One():  # Cesar with key
         output = open("cesar-cipher-output.txt", "w", encoding="utf_8")
     else:
         output = open("cesar-cipher-output.txt", "w", encoding="utf_8")
-
+    
     for lines in inputFile:
         for char in lines:
             i = ord(char)
             i += key
             char = chr(i)
             output.write(char)
-
+    output.close()
 
 def Two():  # Decipher with Key
     print("============================================================\n", end="")
@@ -78,14 +78,15 @@ def Two():  # Decipher with Key
         output = open("cesar-decipher-output.txt", "w", encoding="utf_8")
     else:
         output = open("cesar-decipher-output.txt", "w", encoding="utf_8")
-
+    
     for lines in inputFile:
         for char in lines:
             i = ord(char)
             i -= key
             char = chr(i)
             output.write(char)
-
+              
+    output.close()
 
 def Three():  # Bruteforce Cesar
     print("============================================================\n", end="")
@@ -107,8 +108,9 @@ def Three():  # Bruteforce Cesar
                 output.write(char)
         inputFile.seek(0)
         output.write("************************************************************************\n\n")
-
-
+    
+    output.close()
+       
 def Four():  # XOR Cipher
     print("============================================================\n", end="")
     print("Cipher with XOR selected, output will be saved in xor-cipher-output.txt\n"
@@ -146,6 +148,7 @@ def Four():  # XOR Cipher
         output.write(str(aux))
 
     output.truncate()
+    output.close()
 
 
 def Five():
@@ -172,6 +175,8 @@ def Five():
             xorOutput = xor(word, key)
             output.write(chr(int(xorOutput, 2)))
             word = ""
+       
+    output.close()
 
 
 print(logo)
