@@ -104,7 +104,8 @@ def Three():  # Bruteforce Cesar
             for char in lines:
                 aux = ord(char)
                 aux -= i
-                char = chr(aux)
+                if aux > 0:
+                    char = chr(aux)
                 output.write(char)
         inputFile.seek(0)
         output.write("************************************************************************\n\n")
